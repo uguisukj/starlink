@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarLink</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #000000;
+        }
+
+        header {
+            background-color: #000000;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px; /* Ajuste de margem para alinhamento */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #elementos-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .paragraph {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .correct {
+            border-left: 5px solid #4CAF50;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .correct::before {
+            content: '✔️';
+            position: absolute;
+            left: -25px;
+            font-size: 18px;
+            color: #4CAF50;
+        }
+
+        /* Estilos para o botão de tutorial */
+        #btn-tutorial {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none; /* Remove sublinhado de links */
+        }
+
+        #btn-tutorial:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>StarLink</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Insira o Código Fonte da Página</h2>
+            <textarea id="source-code" placeholder="Cole o código fonte aqui" rows="10" cols="80"></textarea>
+            <button onclick="processarCodigoFonte()">Mostrar Parágrafos</button>
+        </section>
+        <section id="resultado" class="hidden"> <!-- Adiciona a classe hidden inicialmente oculta -->
+            <h2>Parágrafos Encontrados</h2>
+            <div id="elementos-container"></div>
+        </section>
+        <a href="https://discord.gg/8bw9FvKf" id="btn-tutorial">Tutorial</a> <!-- Link para o tutorial -->
+    </main>
+
+    <!-- Inclui o script.js no final do body -->
+    <script src="script.js"></script>
+</body>
+</html>

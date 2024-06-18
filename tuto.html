@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo Personalizado</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            position: relative; /* Necessário para posicionamento absoluto */
+        }
+
+        #video-container {
+            position: relative;
+            max-width: 800px;
+            border: 5px solid white; /* Bordas personalizadas */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
+            z-index: 1; /* Para manter acima do coração */
+            animation: borderRainbow 5s linear infinite; /* Animação de arco-íris na borda */
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Animação de arco-íris na borda */
+        @keyframes borderRainbow {
+            0% {
+                border-color: red;
+                box-shadow: 0 0 10px red;
+            }
+            16% {
+                border-color: orange;
+                box-shadow: 0 0 10px orange;
+            }
+            33% {
+                border-color: yellow;
+                box-shadow: 0 0 10px yellow;
+            }
+            50% {
+                border-color: green;
+                box-shadow: 0 0 10px green;
+            }
+            66% {
+                border-color: blue;
+                box-shadow: 0 0 10px blue;
+            }
+            83% {
+                border-color: indigo;
+                box-shadow: 0 0 10px indigo;
+            }
+            100% {
+                border-color: violet;
+                box-shadow: 0 0 10px violet;
+            }
+        }
+
+        /* Estilos do coração */
+        #heart {
+            position: absolute;
+            top: 20px; /* Posição ajustada para 20 pixels acima do topo do body */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2; /* Posiciona acima do vídeo */
+            font-size: 80px;
+            color: transparent;
+            animation: rainbow 2s linear infinite; /* Animação de arco-íris */
+            filter: drop-shadow(0 0 10px white); /* Sombra branca */
+        }
+
+        @keyframes rainbow {
+            0% {
+                color: red;
+                text-shadow: 0 0 10px red;
+            }
+            16% {
+                color: orange;
+                text-shadow: 0 0 10px orange;
+            }
+            33% {
+                color: yellow;
+                text-shadow: 0 0 10px yellow;
+            }
+            50% {
+                color: green;
+                text-shadow: 0 0 10px green;
+            }
+            66% {
+                color: blue;
+                text-shadow: 0 0 10px blue;
+            }
+            83% {
+                color: indigo;
+                text-shadow: 0 0 10px indigo;
+            }
+            100% {
+                color: violet;
+                text-shadow: 0 0 10px violet;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="heart"><3</div>
+
+    <div id="video-container">
+        <video controls>
+            <source src="always.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento <code>video</code>.
+        </video>
+    </div>
+
+</body>
+</html>
